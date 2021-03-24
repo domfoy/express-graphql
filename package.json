@@ -53,6 +53,7 @@
   "dependencies": {
     "accepts": "^1.3.7",
     "content-type": "^1.0.4",
+    "domfoy-express-graphql": "file:npmDist",
     "http-errors": "1.8.0",
     "raw-body": "^2.4.1"
   },
