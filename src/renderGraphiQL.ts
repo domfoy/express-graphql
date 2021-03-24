@@ -20,6 +20,7 @@ export interface GraphiQLOptions {
    * Defaults to false.
    */
   headerEditorEnabled?: boolean;
+  headers?: string;
 
   /**
    * A websocket endpoint for subscription
@@ -57,6 +58,7 @@ export function renderGraphiQL(
   const defaultQuery = options?.defaultQuery;
   const headerEditorEnabled = options?.headerEditorEnabled;
   const subscriptionEndpoint = options?.subscriptionEndpoint;
+  const headers = options?.headers;
 
   let subscriptionScripts = '';
   if (subscriptionEndpoint != null) {
@@ -227,6 +229,7 @@ add "&raw" to the end of the URL within a browser.
         operationName: ${safeSerialize(operationName)},
         defaultQuery: ${safeSerialize(defaultQuery)},
         headerEditorEnabled: ${safeSerialize(headerEditorEnabled)},
+        headers: ${safeSerialize(headers)},
       }),
       document.getElementById('graphiql')
     );
